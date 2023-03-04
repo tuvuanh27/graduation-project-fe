@@ -2,13 +2,22 @@
   "name": "graduation-project-fe",
   "private": true,
   "version": "0.0.1",
-  "description": "Graduation Project Frontend using React, Vite and Typescript ",
+  "description": "Graduation Project Frontend using React, Vite and Typescript",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "deploy": "./deploy.sh",
-    "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx",
+    "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\"",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "yarn pretty",
+      "yarn lint",
+      "git add ."
+    ]
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.1",
@@ -30,6 +39,9 @@
     "@typescript-eslint/parser": "^5.12.1",
     "@vitejs/plugin-react": "^1.0.7",
     "eslint": "^8.10.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
     "typescript": "^4.5.5",
     "vite": "^2.8.0"
   }

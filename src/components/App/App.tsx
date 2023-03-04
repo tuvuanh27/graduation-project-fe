@@ -8,8 +8,14 @@ import { Connected } from "../Connected/Connected";
 import type { ProviderStringType } from "../../utils/types";
 
 function App() {
-  const { connectProvider, changeProvider, providerString, account, web3, balance } =
-    useWeb3();
+  const {
+    connectProvider,
+    changeProvider,
+    providerString,
+    account,
+    web3,
+    balance,
+  } = useWeb3();
   // Controls the UI loading state which shows/hides the contents of the app
   // We will attempt to connect the user if the provider is set in localStorage
   // Otherwise, we initialize it to false

@@ -11,7 +11,13 @@ type ConnectedProps = {
 };
 
 export const Connected = memo(
-  ({ account, web3, providerString, handleChangeProvider, balance }: ConnectedProps) => {
+  ({
+    account,
+    web3,
+    providerString,
+    handleChangeProvider,
+    balance,
+  }: ConnectedProps) => {
     return (
       <div className="content">
         <small>Selected account: {account}</small>

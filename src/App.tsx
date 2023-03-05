@@ -1,11 +1,11 @@
 import "./App.css";
-import logo from "../../assets/logo.png";
-import connectedLogo from "../../assets/logo_connected.png";
+import logo from "./assets/logo.png";
+import connectedLogo from "./assets/logo_connected.png";
 import { useCallback, useEffect, useState } from "react";
-import { useWeb3 } from "../../hooks/useWeb3/useWeb3";
-import { Disconnected } from "../Disconnected/Disconnected";
-import { Connected } from "../Connected/Connected";
-import type { ProviderStringType } from "../../utils/types";
+import { useWeb3 } from "./hooks/useWeb3/useWeb3";
+import { ProviderStringType } from "./utils/types";
+import { Disconnected } from "./components/Disconnected/Disconnected";
+import { Connected } from "./components/Connected/Connected";
 
 function App() {
   const {

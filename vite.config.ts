@@ -5,7 +5,7 @@ const path = require("path");
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/graduation-project-fe/",
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {

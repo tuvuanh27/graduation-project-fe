@@ -1,6 +1,7 @@
 import { memo } from "react";
 import type Web3 from "web3";
 import type { ProviderStringType } from "../../utils/types";
+import Button from "../common/Button";
 
 type ConnectedProps = {
   web3: Web3;
@@ -19,21 +20,21 @@ export const Connected = memo(
     balance,
   }: ConnectedProps) => {
     return (
-      <div className="content">
-        <small>Selected account: {account}</small>
-        <small>Balance: {balance}</small>
-        <button type="button" onClick={() => signMessage({ web3, account })}>
-          Sign Message
-        </button>
-        <button
-          className="change-provider"
-          type="button"
-          onClick={handleChangeProvider}
-        >
-          Change Provider
-        </button>
-        <small>Connected via {providerString}</small>
-      </div>
+      <>
+        <ul>
+          <li>Connected account: {account}</li>
+          <li>Balance: {balance}</li>
+
+          <li>Connected via {providerString}</li>
+        </ul>
+
+        <div className="mt-3">
+          <Button onClick={() => signMessage({ web3, account })}>
+            Sign Message
+          </Button>
+          <Button onClick={handleChangeProvider}>Change Provider</Button>
+        </div>
+      </>
     );
   }
 );

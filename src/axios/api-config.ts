@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: import.meta.env.VITE_APP_BASE_API_URL as string,
 });
 
 export const EndPoints = {

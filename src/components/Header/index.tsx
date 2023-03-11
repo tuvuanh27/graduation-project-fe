@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Logo from "../../assets/google-logo.png";
+import Logo from "../../assets/logo.png";
 import Button from "../common/Button";
 import { useWeb3 } from "../../hooks/useWeb3/useWeb3";
 import { Disconnected } from "../Disconnected/Disconnected";
 import { Connected } from "../Connected/Connected";
 import { ProviderStringType } from "../../utils/types";
+import Loading from "../common/Loading";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const {
@@ -15,6 +17,7 @@ const Header = () => {
     web3,
     balance,
   } = useWeb3();
+  const navigate = useNavigate();
   const connected = !!account && !!web3;
   const [loading, setLoading] = useState(!!providerString);
 
@@ -26,13 +29,6 @@ const Header = () => {
   useEffect(() => {
     if (connected && loading) setLoading(false);
   }, [connected, loading]);
-
-  const log = async () => {
-    console.log(connected, account, balance);
-    // log chain info
-    const chainId = web3 && (await web3.eth.getChainId());
-    console.log("chainId: ", chainId);
-  };
 
   const closeModal = () => {
     setIsOpenModalConnected(false);
@@ -64,13 +60,21 @@ const Header = () => {
   }, [changeProvider]);
 
   return (
-    <header className="bg-white flex justify-between items-center py-4 px-6">
-      <div className="cursor-pointer">
-        <img src={Logo} alt="Logo" className="h-8" />
+    <header className="bg-white flex justify-between items-center px-6">
+      <div
+        className="cursor-pointer flex items-center"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <img src={Logo} alt="Logo" className="h-16" />
+        <h1 className="text-red-500 mt-2 mb-2 font-semibold  text-2xl text-center">
+          NiftyMint
+        </h1>
       </div>
       <div>
         {loading ? (
-          <>loading...</>
+          <Loading />
         ) : connected ? (
           <Button onClick={handleConnectWallet} bgColor="red">
             {account?.slice(0, 6) + "..." + account?.slice(-4)} - Balance:{" "}
@@ -107,7 +111,7 @@ const Header = () => {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   {loading ? (
-                    <p>loading...</p>
+                    <Loading />
                   ) : (
                     <div>
                       {!connected && (

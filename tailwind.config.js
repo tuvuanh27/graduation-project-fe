@@ -6,6 +6,15 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: [
+        "-apple-system",
+        "system-ui",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+      ],
+    },
   },
   plugins: [],
 };

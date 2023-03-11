@@ -1,0 +1,94 @@
+@import '../variables';
+
+.splash-photo-container {
+
+    height: $pin-height;
+    width: $pin-width;
+    position: relative;
+    
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .splash-photo-0 {
+        position: absolute;
+        top: -20px;
+        right: 750px;  
+    }
+
+    .splash-photo-1 {
+        position: absolute;
+        top: 347px;
+        right: 750px;
+    }
+
+    .splash-photo-2 {
+        position: absolute;
+        top: 115px;
+        right: 500px;
+    }
+
+    .splash-photo-3 {
+        position: absolute;
+        top: 482px;
+        right: 500px; 
+
+    }
+
+    .splash-photo-4 {
+        position: absolute;
+        top: 240px;
+        right: 250px;
+    }
+
+    .splash-photo-5 {
+        position: absolute;
+        top: 607px;
+        right: 250px;
+    }
+
+    .splash-photo-6 {
+        position: absolute;
+        top: 380px;
+        right: 0px;
+    }
+
+    .splash-photo-7 {
+        position: absolute;
+        top: 240px;
+        right: -250px;
+    }
+
+    .splash-photo-8 {
+        position: absolute;
+        top: 607px;
+        right:-250px;
+    }
+
+    .splash-photo-9 {
+        position: absolute;
+        top: 115px;
+        right: -500px;
+    }
+
+    .splash-photo-10 {
+        position: absolute;
+        top: 482px;
+        right: -500px;
+    }
+
+    
+    .splash-photo-11 {
+        position: absolute;
+        top: -20px;
+        right: -750px;
+    }
+
+    .splash-photo-12 {
+        position: absolute;
+        top: 347px;
+        right: -750px;
+    }
+}

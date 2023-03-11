@@ -1,0 +1,39 @@
+@import '../variables';
+
+.no-created-container {
+    height: 80%;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        text-align: center;
+        font-weight: $semibold;
+        font-size: 28px;
+    }
+
+    div {
+        background-color: $pinterest-red;
+        color: white;
+        width: 80px;
+        height: 50px;
+        border-radius: 24px;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        cursor: pointer;
+        margin-bottom: 150px;
+
+        &:hover {
+            background-color: $hover-red;
+        }
+
+        h1 {
+            font-size: 16px;
+        }
+    }
+}

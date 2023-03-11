@@ -1,0 +1,55 @@
+.second-page {
+    height: 100vh;
+    width: 100%;
+    top: 200vh;
+    background-color: white;
+    z-index: 2;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.second-page-photo-background {
+    z-index: 1;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+
+}
+
+.second-page-background {
+    position: absolute; 
+    height: 105vh; 
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 4;
+
+}
+
+.splash-signup {
+    z-index: 5;
+    padding-right: 200px;
+}
+
+.stationary-form {
+    display: none;
+}
+
+.second-page-text-container {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+    z-index: 5;
+    color: white;
+    font-size: 70px;
+    font-weight: 600;
+    padding-left: 200px;
+    word-spacing: 5px;
+    line-height: 1.3;
+}
+
+

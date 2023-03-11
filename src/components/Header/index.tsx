@@ -21,6 +21,10 @@ const Header = () => {
   const connected = !!account && !!web3;
   const [loading, setLoading] = useState(!!providerString);
 
+  const click = () => {
+    console.log("click");
+  };
+
   const [isOpenModalConnected, setIsOpenModalConnected] = React.useState(false);
   const handleConnectWallet = () => {
     setIsOpenModalConnected(true);
@@ -68,9 +72,7 @@ const Header = () => {
         }}
       >
         <img src={Logo} alt="Logo" className="h-16" />
-        <h1 className="text-red-500 mt-2 mb-2 font-semibold  text-2xl text-center">
-          NiftyMint
-        </h1>
+        <h1 className="logo-text">NiftyMint</h1>
       </div>
       <div>
         {loading ? (
@@ -130,9 +132,9 @@ const Header = () => {
                   )}
                 </div>
                 {/*footer*/}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                <div className="flex items-center justify-end p-2 border-t border-solid border-slate-200 rounded-b">
                   <button
-                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    className="text-red-500 background-transparent font-bold uppercase px-10 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={closeModal}
                   >

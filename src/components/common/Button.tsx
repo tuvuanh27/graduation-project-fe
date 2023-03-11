@@ -9,7 +9,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ onClick, children, bgColor }) => {
   const styles: Record<string, string> = {
     default: "bg-cyan-500 hover:bg-cyan-700",
-    red: "bg-red-500 hover:bg-red-700",
+    red: "bg-red-600 hover:bg-red-800",
     orange: "bg-orange-500 hover:bg-orange-700",
     green: "bg-green-500 hover:bg-green-700",
     blue: "bg-blue-500 hover:bg-blue-700",
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, children, bgColor }) => {
 
   return (
     <button
-      className={`${styles[bgColor]} m-1 text-white font-medium py-2 px-4 rounded-full inline-block`}
+      className={`${styles[bgColor]} m-1 text-white font-normal py-2 px-4 rounded-full inline-block text-lg`}
       onClick={onClick}
     >
       {children}

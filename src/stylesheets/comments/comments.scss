@@ -1,0 +1,196 @@
+@import '../variables';
+
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 66px;
+    height: 80%;
+    width: 95%;
+    margin-left: 15px;
+    font-family: $default-font;
+}
+
+.comments-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 55%;
+    max-height: 150px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.comments-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+    align-items: center;
+    font-weight: $semibold;
+    font-size: 20px;
+    width: 135px;
+}
+
+.comment-text {
+    font-size: 15px;
+    margin-left: 10px;
+    width: 240px;
+
+    input {
+        font-size: 15px; 
+        font-family: $default-font;
+        width: 230px;
+        height: 40px;
+        border: 1px solid $input-border-grey;
+        border-radius: 20px;
+        text-indent: 10px;
+
+        &:focus {
+            border: 1px solid $input-border-grey;
+            outline: none;
+        }
+    }
+}
+
+.comment-item {
+    width: 90%;
+    margin: 20px;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.comment-extras {
+    width: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .dots {
+        margin-bottom: 8px;
+        color: $grey-text;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}
+
+.options-comments-menu {
+    right: 20px;
+    bottom: -8px;
+    position: absolute;
+    width: 163px;
+    height: 70px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    text-indent: 15px;
+    z-index: 2;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+}
+
+.options-comments-menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.edit-comment-option {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: $semibold;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 8px;
+
+    &:hover {
+        background: $search-bar-grey;
+    }
+}
+
+.comment-item-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.create-comment {
+    right: 20px;
+    bottom: -35px;
+    position: absolute;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 467px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+
+    .default-picture, .div-image {
+        height: 45px;
+        width: 45px;
+        font-size: 16px;
+        border-radius: 50%;
+        font-weight: $semibold;
+    }
+
+    input {
+        width: 330px;
+        font-size: 16px;
+        text-indent: 15px;
+
+        height: 38px;
+        cursor: text;
+        border-radius: 20px;
+        border: 1px solid $input-border-grey;
+        color: $grey-text;
+
+        &:focus {
+            box-shadow: $modal-input-focus 0 0 0 4px;
+            outline: 0;
+        }
+    }
+
+    .button-save {
+        width: 55px;
+        height: 40px;
+        font-weight: $semibold;
+        border: 0px;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-save.not-clickable {
+        background-color: #efefef;
+        color: #767676;
+    }
+
+}

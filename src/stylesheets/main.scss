@@ -1,0 +1,35 @@
+@import 'variables';
+
+#root {
+    font-family: $default-font;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    > div {
+        height: 100%;
+
+        > header {
+            height: 10%;
+        }
+
+    }
+}
+
+#root::-webkit-scrollbar {
+    display: none;
+}
+
+.hide { 
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+
+

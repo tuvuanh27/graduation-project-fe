@@ -1,0 +1,35 @@
+@import '../variables';
+
+.no-saved-container {
+    height: 80%;
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    h1 {
+        text-align: center;
+    }
+
+    div {
+        background-color:#f0f0f0;
+        width: 100px;
+        height: 50px;
+        border-radius: 24px;
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #dadada;
+        }
+
+        h1 {
+            font-weight: $semibold;
+        }
+    }
+}

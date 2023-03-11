@@ -1,0 +1,185 @@
+@import '../variables';
+
+.splash-container {
+    display: flex; 
+    flex-direction: column;
+    position: absolute; 
+    width: 100%;
+    height: 300vh;
+
+    section {
+        scroll-snap-align: start;
+    }
+}
+
+
+.splash-page-carousel {
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+}
+
+.splash-page-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 100px;
+    overflow: hidden;
+    position: relative;
+    height: 90vh;
+    z-index: 0;
+    
+}
+.splash-changing-container {
+    height: 100%;
+    width: 100%;
+    top: 210px;
+    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-page-arrow {
+    cursor: pointer;
+    background: $pinterest-red;
+    border-radius: 50%;
+    margin: 68px;
+    height: 50px;
+    width: 50px;
+    animation-name: bouncing-arrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 300px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+    i {
+        right: 15px;
+        bottom: 25px;
+        color: white;
+        position: absolute;
+        -webkit-text-stroke: 1px white;
+    }
+
+}
+
+.second-page-arrow {
+    cursor: pointer;
+    background: $pinterest-red;
+    border-radius: 50%;
+    margin: 68px;
+    height: 50px;
+    width: 50px;
+
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 5;
+    animation: bouncing-down-arrow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 600px;
+
+    i {
+        right: 15px;
+        bottom: 25px;
+        color: white;
+        position: absolute;
+        -webkit-text-stroke: 1px white;
+    }
+}
+
+.powder-arrow {
+    background-color: rgb(105, 164, 222);
+}
+
+.interior-arrow {
+   background-color: rgb(60, 154, 60);
+}
+
+.sunset-arrow {
+   background-color: rgb(241, 159, 52);
+}
+
+.piece-arrow {
+   background-color: rgb(255, 62, 62);
+}   
+
+@keyframes bouncing-arrow {
+    0% {transform: translateY(0)}
+    20% {transform: translateY(0);}
+    50% {transform: translateY(0);}
+    40% {transform: translateY(-20px);} 
+    60% {transform: translateY(-10px);} 
+    80% {transform: translateY(0px);} 
+    100% {transform: translateY(0);} 
+}
+
+@keyframes bouncing-down-arrow {
+    0% {transform: translateY(0)}
+    20% {transform: translateY(0);}
+    50% {transform: translateY(0);}
+    40% {transform: translateY(-10px);} 
+    60% {transform: translateY(-20px);} 
+    80% {transform: translateY(0px);} 
+    100% {transform: translateY(0);} 
+}
+
+.show-arrow {
+    opacity: 1;
+}
+
+.hidden-arrow {
+    opacity: 0;
+}
+
+.page-nav-buttons {
+    position: absolute;
+    margin: auto;
+    margin-top: 360px;
+    left: 0;
+    right: 0;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    
+    div {
+        z-index: 3;
+        margin: 5px;
+        cursor: pointer;
+        margin-bottom: 425px;
+        border-radius: 50%; 
+        width: 10px; 
+        height: 10px;
+        background-color: rgb(225, 225, 225);
+    }
+
+    .powder-page-button {
+        background-color: rgb(105, 164, 222);
+    }
+    
+    .interior-page-button {
+       background-color: rgb(60, 154, 60);
+    }
+    
+    .sunset-page-button {
+       background-color: rgb(241, 159, 52);
+    }
+    
+    .piece-page-button {
+       background-color: rgb(255, 62, 62);
+    }  
+
+}

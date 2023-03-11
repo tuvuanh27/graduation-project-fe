@@ -1,0 +1,88 @@
+@import '../variables';
+
+.edit-board-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+        background: rgba(255, 255, 255, 1);
+    }
+}
+
+.save-pin-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: $semibold;
+
+    width: 70px;
+    height: 50px;
+    border-radius: 24px;
+    background-color: $pinterest-red;
+    cursor: pointer; 
+    &:hover {
+        background-color: $hover-red;
+    }
+}
+
+.save-pin-button.saved-mode {
+    background-color: $text-default;
+}
+
+.board-show-plus {
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90%;
+    
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    align-items: center;
+    background-color: white;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+
+    i {
+        -webkit-text-stroke: 0.5px black;
+    }
+}
+
+.board-show-plus.clicked {
+    background-color: black;
+    color: white;
+}
+
+.plus-menu.board-show {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 78%;
+    position: fixed;
+    z-index: 10;
+
+}
+
+.pins-counter {
+    position: absolute; 
+    font-weight: $semibold;
+    font-size: 20px;
+    left: 20px;
+    top: -58px;
+}

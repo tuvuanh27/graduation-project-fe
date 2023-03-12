@@ -64,7 +64,10 @@ const Header = () => {
   }, [changeProvider]);
 
   return (
-    <header className="bg-white flex justify-between items-center px-6">
+    <header
+      className="bg-white flex justify-between items-center px-7 p-2"
+      id="top"
+    >
       <div
         className="cursor-pointer flex items-center"
         onClick={() => {

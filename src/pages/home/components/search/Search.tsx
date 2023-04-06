@@ -1,14 +1,8 @@
 import Button from "../../../../components/common/Button";
-import { splashInfo } from "../slider/fake-data";
 
 const Search = () => {
   const explore = () => {
     console.log("explore");
-  };
-
-  const getRandomPhoto = () => {
-    const random = Math.floor(Math.random() * 4);
-    return splashInfo[random].photoUrls[0];
   };
 
   return (

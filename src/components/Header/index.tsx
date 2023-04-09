@@ -21,10 +21,6 @@ const Header = () => {
   const connected = !!account && !!web3;
   const [loading, setLoading] = useState(!!providerString);
 
-  const click = () => {
-    console.log("click");
-  };
-
   const [isOpenModalConnected, setIsOpenModalConnected] = React.useState(false);
   const handleConnectWallet = () => {
     setIsOpenModalConnected(true);
@@ -77,13 +73,31 @@ const Header = () => {
         <img src={Logo} alt="Logo" className="h-16" />
         <h1 className="logo-text">NiftyMint</h1>
       </div>
+
+      <div className="flex items-center border-2 rounded-full px-5 py-2 border-solid border-neutral-300 w-1/2">
+        <input
+          className="flex-1 bg-transparent outline-none"
+          type="text"
+          placeholder="Search..."
+        />
+        <button className="ml-4">
+          <svg
+            className="fill-current text-gray-500 h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path d="M9 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zM18.707 17.293l-4.2-4.2A6.96 6.96 0 0016 9a7 7 0 10-7 7 6.96 6.96 0 003.093-.747l4.2 4.2a1 1 0 001.414-1.414z" />
+          </svg>
+        </button>
+      </div>
+
       <div>
         {loading ? (
           <Loading />
         ) : connected ? (
           <Button onClick={handleConnectWallet} bgColor="red">
             {account?.slice(0, 6) + "..." + account?.slice(-4)} - Balance:{" "}
-            {balance}
+            {balance?.slice(0, 6)} BNB
           </Button>
         ) : (
           <Button onClick={handleConnectWallet} bgColor="red">

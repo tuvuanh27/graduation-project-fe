@@ -33,6 +33,8 @@
     "react-query": "^3.39.3",
     "react-router": "^6.8.2",
     "react-router-dom": "^6.8.2",
+    "react-scroll-to-top": "^3.0.0",
+    "react-toastify": "^9.1.2",
     "sass": "^1.59.2",
     "util": "^0.12.4",
     "web3": "^1.7.0",

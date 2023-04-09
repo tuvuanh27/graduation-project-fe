@@ -1,9 +1,12 @@
 import Button from "../../../../components/common/Button";
 import shopImage from "../../../../assets/shop.png";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
+  const navigate = useNavigate();
+
   const explore = () => {
-    console.log("explore");
+    navigate("/manager");
   };
 
   return (

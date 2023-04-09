@@ -13,6 +13,20 @@ export async function postAxios<T>(endpoint: EndPointsValues, arg: T) {
   return await api.post<T>(`${endpoint}`, arg);
 }
 
+export async function axiosFormData<T>(endpoint: EndPointsValues, arg: T) {
+  const formData = new FormData();
+  Object.keys(arg).forEach((key) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    formData.append(key, arg[key]);
+  });
+  return await api.post<T>(`${endpoint}`, arg, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+}
+
 export async function putAxios<RT, BT>(
   endpoint: EndPointsValues,
   id: string,

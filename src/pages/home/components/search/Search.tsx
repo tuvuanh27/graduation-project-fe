@@ -1,8 +1,11 @@
 import Button from "../../../../components/common/Button";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
+
   const explore = () => {
-    console.log("explore");
+    navigate("/manager");
   };
 
   return (
@@ -37,7 +40,12 @@ const Search = () => {
               className="w-72 h-[30rem]  rounded-[50px] ml-10 mt-10"
             />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-white text-red-900 font-bold rounded-[3rem] h-24 w-72 cursor-pointer">
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center px-4 py-2 bg-white text-red-900 font-bold rounded-[3rem] h-24 w-72 cursor-pointer">
+              <div
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center px-4 py-2 bg-white text-red-900 font-bold rounded-[3rem] h-24 w-72 cursor-pointer"
+                onClick={() => {
+                  navigate("/manager");
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

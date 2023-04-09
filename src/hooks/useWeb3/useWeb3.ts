@@ -6,6 +6,7 @@ import type { EthereumProvider, ProviderStringType } from "../../utils/types";
 // The localstorage key for the selected provider
 // If defined, value is either 'coinbase', 'metamask', or 'walletconnect'
 const LS_KEY = "web3-provider";
+export const ADDRESS_KEY = "web3-address";
 
 export const useWeb3 = () => {
   // This is the connected provider's Web3 Instance
@@ -60,6 +61,10 @@ export const useWeb3 = () => {
     },
     [changeProvider]
   );
+
+  useEffect(() => {
+    account && localStorage.setItem(ADDRESS_KEY, account);
+  }, [account]);
 
   /**
    * Accounts Changed and MetaMask Disconnect Effect
@@ -127,6 +132,7 @@ export const useWeb3 = () => {
         !localStorage.getItem("-walletlink:https://www.walletlink.org:version")
       ) {
         localStorage.removeItem(LS_KEY);
+        localStorage.removeItem(ADDRESS_KEY);
       }
     };
 

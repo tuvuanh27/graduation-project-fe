@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useGetPendingNft } from "../hooks/useGetPendingNft";
 
 export const LeftSide: React.FC = () => {
+  const { data } = useGetPendingNft();
+
   return (
     <aside
       id="logo-sidebar"
@@ -31,7 +34,7 @@ export const LeftSide: React.FC = () => {
           </li>
           <li>
             <NavLink
-              to="/manager/boards"
+              to="/manager/my-photos"
               className="flex items-center p-2 text-gray-900 rounded-lg light:text-white hover:bg-gray-100 light:hover:bg-gray-700"
             >
               <svg
@@ -43,12 +46,12 @@ export const LeftSide: React.FC = () => {
               >
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
               </svg>
-              <span className="flex-1 ml-3 whitespace-nowrap">Your Photos</span>
+              <span className="flex-1 ml-3 whitespace-nowrap">My Photos</span>
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/manager/new"
+              to="/manager/upload-new"
               className="flex items-center p-2 text-gray-900 rounded-lg light:text-white hover:bg-gray-100 light:hover:bg-gray-700"
             >
               <svg
@@ -59,9 +62,9 @@ export const LeftSide: React.FC = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
               <span className="ml-4">Upload New</span>
@@ -80,20 +83,20 @@ export const LeftSide: React.FC = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">Pending</span>
               <span className="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full light:bg-blue-900 light:text-blue-300">
-                3
+                {data && data.data.data.length}
               </span>
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/manager/upload-onchain"
+              to="/manager/ready-onchain"
               className="flex items-center p-2 text-gray-900 rounded-lg light:text-white hover:bg-gray-100 light:hover:bg-gray-700"
             >
               <svg
@@ -124,9 +127,9 @@ export const LeftSide: React.FC = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
               <span className="flex-1 ml-3 whitespace-nowrap">About Us</span>

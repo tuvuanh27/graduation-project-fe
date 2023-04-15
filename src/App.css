@@ -43,3 +43,11 @@ button {
 button.change-provider {
   background-color: lightpink;
 }
+
+.search-form {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}

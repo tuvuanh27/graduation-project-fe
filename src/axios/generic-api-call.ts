@@ -1,8 +1,14 @@
 import { api } from "./api-config";
 import type { EndPointsValues } from "./api-config";
 
-export async function getAxios<T>(endpoint: EndPointsValues) {
-  return await api.get<T>(`${endpoint}`);
+function paramsSerializer(params: any) {
+  return Object.entries(Object.assign({}, params))
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&");
+}
+
+export async function getAxios<T>(endpoint: EndPointsValues, params?: any) {
+  return await api.get<T>(`${endpoint}?${paramsSerializer(params)}`);
 }
 
 export async function deleteAxios<T>(endpoint: EndPointsValues, id: string) {
@@ -10,7 +16,7 @@ export async function deleteAxios<T>(endpoint: EndPointsValues, id: string) {
 }
 
 export async function postAxios<T>(endpoint: EndPointsValues, arg: T) {
-  return await api.post<T>(`${endpoint}`, arg);
+  return await api.post(`${endpoint}`, arg);
 }
 
 export async function axiosFormData<T>(endpoint: EndPointsValues, arg: T) {

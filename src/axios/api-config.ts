@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { ADDRESS_KEY, useWeb3 } from "../hooks/useWeb3/useWeb3";
+import { ADDRESS_KEY } from "../hooks/useWeb3/useWeb3";
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API_URL as string,
@@ -27,6 +27,14 @@ api.interceptors.request.use(
 
 export const EndPoints = {
   createPending: "nft/create-pending",
+  getMyPending: "nft/get-pending-nft",
+  deletePending: "nft/delete-pending-nft",
+  uploadMetadata: "nft/upload-metadata-to-ipfs",
+  getReady: "nft/get-ready-onchain",
+  getOnchainByOwner: "nft/get-nft-onchain-by-owner",
+  publicNft: "nft/public-nft",
+  search: "nft/search-nft-onchain",
+  getListNftsByIds: "nft/get-list-nft-onchain",
 } as const;
 
 type EndPointType = typeof EndPoints;

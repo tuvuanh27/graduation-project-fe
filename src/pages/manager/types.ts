@@ -43,3 +43,11 @@ export interface INftTransfer {
   blockNumber: number;
   blockTime: number;
 }
+
+export interface IIpfsResponse {
+  name: string;
+  description: string;
+  image: string;
+  external_url?: string;
+  attributes?: INftAttributes[];
+}

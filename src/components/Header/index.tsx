@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import Logo from "../../assets/logo.png";
 import Button from "../common/Button";
 import { useWeb3 } from "../../hooks/useWeb3/useWeb3";
@@ -7,6 +7,8 @@ import { Connected } from "../Connected/Connected";
 import { ProviderStringType } from "../../utils/types";
 import Loading from "../common/Loading";
 import { useNavigate } from "react-router-dom";
+import { useSearchStore } from "../../stores/searchQueryStore";
+import debounce from "lodash/debounce";
 
 const Header = () => {
   const {
@@ -20,6 +22,12 @@ const Header = () => {
   const navigate = useNavigate();
   const connected = !!account && !!web3;
   const [loading, setLoading] = useState(!!providerString);
+  const { setSearchQuery, searchQuery } = useSearchStore();
+  // const [query, setQuery] = useState(searchQuery);
+  const setSearchQueryDebounced = debounce(
+    useSearchStore.getState().setSearchQuery,
+    500
+  );
 
   const [isOpenModalConnected, setIsOpenModalConnected] = React.useState(false);
   const handleConnectWallet = () => {
@@ -59,6 +67,18 @@ const Header = () => {
     setLoading(false);
   }, [changeProvider]);
 
+  const handleSubmit = () => {
+    // setSearchQuery(query);
+    navigate("/manager/explore");
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      setSearchQuery(event.currentTarget.value);
+      navigate("/manager/explore");
+    }
+  };
+
   return (
     <header
       className="bg-white flex justify-between items-center px-7 p-2"
@@ -79,8 +99,11 @@ const Header = () => {
           className="flex-1 bg-transparent outline-none"
           type="text"
           placeholder="Search..."
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+          onKeyDown={(event) => handleKeyDown(event)}
         />
-        <button className="ml-4">
+        <button onClick={handleSubmit} className="ml-4">
           <svg
             className="fill-current text-gray-500 h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"

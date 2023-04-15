@@ -2,6 +2,9 @@ import Web3 from "web3";
 import { useCallback, useEffect, useState } from "react";
 import { connectWithProvider } from "./connectWithProvider";
 import type { EthereumProvider, ProviderStringType } from "../../utils/types";
+import { NftAbi } from "../../assets/abi";
+import NFT_JSON_ABI from "../../assets/abi/nft.abi.json";
+import { AbiItem } from "web3-utils";
 
 // The localstorage key for the selected provider
 // If defined, value is either 'coinbase', 'metamask', or 'walletconnect'
@@ -11,6 +14,8 @@ export const ADDRESS_KEY = "web3-address";
 export const useWeb3 = () => {
   // This is the connected provider's Web3 Instance
   const [web3, setWeb3] = useState<Web3>();
+  // nft contract
+  const [contract, setContract] = useState<NftAbi>();
   // This is the connected provider's ethereum provider
   const [provider, setProvider] = useState<EthereumProvider>();
   // This is the connected provider's active address
@@ -30,6 +35,7 @@ export const useWeb3 = () => {
     setProviderString(undefined);
     setProvider(undefined);
     setWeb3(undefined);
+    setContract(undefined);
     setAccount(undefined);
   }, [provider]);
 
@@ -52,6 +58,12 @@ export const useWeb3 = () => {
         setProviderString(selectedProvider);
         setProvider(connectedProvider);
         setWeb3(web3Instance);
+        setContract(
+          new web3Instance.eth.Contract(
+            NFT_JSON_ABI.abi as AbiItem[],
+            import.meta.env.VITE_APP_NFT_ADDRESS as string
+          ) as unknown as NftAbi
+        );
         setAccount(accounts[0]);
       } catch {
         // If the user cancels the request to connect from the wallet provider
@@ -198,5 +210,6 @@ export const useWeb3 = () => {
     account,
     web3,
     balance,
+    contract,
   };
 };

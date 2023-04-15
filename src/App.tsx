@@ -10,11 +10,12 @@ import {
 } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import { Explore } from "./pages/manager/components/Explore";
-import { YourPhotos } from "./pages/manager/components/YourPhotos";
+import { MyPhotos } from "./pages/manager/components/MyPhotos";
 import { Pending } from "./pages/manager/components/Pending";
 import { Ready } from "./pages/manager/components/Ready";
 import { CreateNew } from "./pages/manager/components/CreateNew";
 import "react-toastify/dist/ReactToastify.css";
+import { NftDetail } from "./pages/manager/components/NftDetail";
 
 const Home = React.lazy(() => import("./pages/home"));
 const Manager = React.lazy(() => import("./pages/manager"));
@@ -30,10 +31,11 @@ function App() {
 
           <Route path="manager" element={<Manager />}>
             <Route path="explore" element={<Explore />} />
-            <Route path="boards" element={<YourPhotos />} />
-            <Route path="new" element={<CreateNew />} />
+            <Route path="my-photos" element={<MyPhotos />} />
+            <Route path="upload-new" element={<CreateNew />} />
             <Route path="pending" element={<Pending />} />
-            <Route path="upload-onchain" element={<Ready />} />
+            <Route path="ready-onchain" element={<Ready />} />
+            <Route path="image-detail/:id" element={<NftDetail />} />
           </Route>
 
           <Route path="/404" element={<NotFound />} />

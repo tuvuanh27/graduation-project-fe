@@ -6,7 +6,7 @@ const Shop = () => {
   const navigate = useNavigate();
 
   const explore = () => {
-    navigate("/manager");
+    navigate("/manager/explore");
   };
 
   return (
@@ -22,7 +22,7 @@ const Shop = () => {
             See it, make it, try it, do it
           </h3>
           <h4 className="mx-auto w-3/5 text-rose-700 text-2xl font-md block text-center m-6">
-            The best part of Pinterest is discovering new things and ideas from
+            The best part of NiftyMint is discovering new things and ideas from
             people around the world.
           </h4>
           <Button onClick={explore} bgColor="red">

@@ -8,7 +8,7 @@ export const LeftSide: React.FC = () => {
   return (
     <aside
       id="logo-sidebar"
-      className="h-screen sticky top-0 left-0 z-40 w-full  pt-4 pl-2 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 light:bg-gray-800 light:border-gray-700"
+      className="h-screen top-0 left-0 w-full  pt-4 pl-2 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 light:bg-gray-800 light:border-gray-700"
       aria-label="Sidebar"
       style={{ height: "calc(100vh - 48px)" }}
     >
@@ -30,6 +30,27 @@ export const LeftSide: React.FC = () => {
                 <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
               </svg>
               <span className="ml-3">Explore</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/manager/on-sale"
+              className="flex items-center p-2 text-gray-900 rounded-lg light:text-white hover:bg-gray-100 light:hover:bg-gray-700"
+            >
+              <svg
+                aria-hidden="true"
+                className="w-6 h-6 text-gray-500 transition duration-75 light:text-gray-400 group-hover:text-gray-900 light:group-hover:text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+              <span className="ml-3">On Sale</span>
             </NavLink>
           </li>
           <li>

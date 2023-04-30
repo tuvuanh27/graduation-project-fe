@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.1",
+    "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.16",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@typechain/web3-v1": "^6.0.2",

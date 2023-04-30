@@ -29,6 +29,7 @@ export const NftDetail: React.FC = () => {
       </div>
       <div className="w-1/2 px-8">
         <h1 className="text-2xl font-bold mb-2">{data.name}</h1>
+        <h4 className="text-md font-bold mb-2">Price: {data.price}</h4>
         <p className="text-gray-700 mb-4">{data?.description}</p>
         <p className="text-gray-700 mb-4">{data?.metadata?.externalUrl}</p>
         <ul className="text-gray-700">
@@ -36,7 +37,12 @@ export const NftDetail: React.FC = () => {
             data.metadata.attributes.map((attr, i) => (
               <li key={i} className="flex mb-2">
                 <strong className="mr-2">
-                  {attr?.trait_type || attr?.traitType}:
+                  {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    attr?.trait_type || attr?.traitType
+                  }
+                  :
                 </strong>
                 <span>{attr.value}</span>
               </li>

@@ -35,6 +35,7 @@ export const EndPoints = {
   publicNft: "nft/public-nft",
   search: "nft/search-nft-onchain",
   getListNftsByIds: "nft/get-list-nft-onchain",
+  getNftsOnSale: "nft/get-nft-on-sale",
 } as const;
 
 type EndPointType = typeof EndPoints;

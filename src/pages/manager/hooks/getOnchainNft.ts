@@ -11,8 +11,16 @@ const getOnchainNftByOwner = async () => {
   return getAxios<{ data: INft[] }>(EndPoints.getOnchainByOwner);
 };
 
+const getOnSaleNft = async () => {
+  return getAxios<{ data: INft[] }>(EndPoints.getNftsOnSale);
+};
+
 export function useGetOnchainNftByOwner() {
   return useQuery("my-onchain", () => getOnchainNftByOwner());
+}
+
+export function useGetOnSaleNft() {
+  return useQuery("on-sale", () => getOnSaleNft());
 }
 
 const postNftByIds = async (ids: string[]) => {

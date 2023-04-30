@@ -16,6 +16,7 @@ import { Ready } from "./pages/manager/components/Ready";
 import { CreateNew } from "./pages/manager/components/CreateNew";
 import "react-toastify/dist/ReactToastify.css";
 import { NftDetail } from "./pages/manager/components/NftDetail";
+import { OnSale } from "./pages/manager/components/OnSale";
 
 const Home = React.lazy(() => import("./pages/home"));
 const Manager = React.lazy(() => import("./pages/manager"));
@@ -31,6 +32,7 @@ function App() {
 
           <Route path="manager" element={<Manager />}>
             <Route path="explore" element={<Explore />} />
+            <Route path="on-sale" element={<OnSale />} />
             <Route path="my-photos" element={<MyPhotos />} />
             <Route path="upload-new" element={<CreateNew />} />
             <Route path="pending" element={<Pending />} />

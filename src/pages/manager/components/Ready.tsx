@@ -47,6 +47,10 @@ export const Ready: React.FC = () => {
 
   // function call to mint the NFT
   const mintNft = async (ipfsHash: string, isPublic: boolean) => {
+    if (!account) {
+      toast.error("Please connect your wallet");
+      return;
+    }
     setLoading(true);
     const mintFee = await contract?.methods.mintingFee().call();
     try {
@@ -55,7 +59,6 @@ export const Ready: React.FC = () => {
         (await contract.methods
           .mint(ipfsHash, isPublic)
           .send({ from: account, value: mintFee }));
-      console.log(tx);
 
       setLoading(false);
       await queryClient.invalidateQueries("my-ready");

@@ -10,6 +10,7 @@ export interface INft {
   metadata: INFTMetadata;
   blockNumberCreated: number;
   blockTimeCreated: number;
+  price: string;
 }
 
 export interface INftAttributes {

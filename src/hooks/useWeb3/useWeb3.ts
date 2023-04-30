@@ -31,6 +31,7 @@ export const useWeb3 = () => {
   const changeProvider = useCallback(() => {
     // Removes localstorage key that defines the wallet provider
     localStorage.removeItem(LS_KEY);
+    localStorage.removeItem(ADDRESS_KEY);
     // Clear out web3 and ethereum state variables
     setProviderString(undefined);
     setProvider(undefined);

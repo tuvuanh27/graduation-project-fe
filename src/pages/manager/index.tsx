@@ -12,7 +12,7 @@ const Manager: React.FC = () => {
           <LeftSide />
         </div>
 
-        <div className="flex flex-row w-5/6 pt-4 pr-8">
+        <div className="w-5/6 pt-4 pr-8">
           <Outlet />
         </div>
       </div>

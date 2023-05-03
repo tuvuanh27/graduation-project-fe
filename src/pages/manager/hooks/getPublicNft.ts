@@ -8,7 +8,7 @@ interface ISearchQuery {
 }
 
 const getPublicNft = async (param?: ISearchQuery) => {
-  return getAxios<{ data: INft[] }, ISearchQuery>(EndPoints.publicNft, param);
+  return getAxios<{ data: INft[] }>(EndPoints.publicNft, param);
 };
 
 export function useGetPublicNft(param?: ISearchQuery) {

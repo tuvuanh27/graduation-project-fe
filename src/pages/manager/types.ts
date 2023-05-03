@@ -11,6 +11,7 @@ export interface INft {
   blockNumberCreated: number;
   blockTimeCreated: number;
   price: string;
+  numberOfTransfer?: number;
 }
 
 export interface INftAttributes {

@@ -36,6 +36,8 @@ export const EndPoints = {
   search: "nft/search-nft-onchain",
   getListNftsByIds: "nft/get-list-nft-onchain",
   getNftsOnSale: "nft/get-nft-on-sale",
+  getNftTopTransfer: "nft/get-nft-top-transfer",
+  getTransferHistory: (nftId: string) => `nft/get-transfer-history/${nftId}`,
 } as const;
 
 type EndPointType = typeof EndPoints;

@@ -7,7 +7,10 @@ function paramsSerializer(params: any) {
     .join("&");
 }
 
-export async function getAxios<T>(endpoint: EndPointsValues, params?: any) {
+export async function getAxios<T>(
+  endpoint: EndPointsValues | string,
+  params?: any
+) {
   return await api.get<T>(`${endpoint}?${paramsSerializer(params)}`);
 }
 

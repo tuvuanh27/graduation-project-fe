@@ -7,7 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import queryClient from "../../../queryClient";
 
 interface IReadyProps {
-  data: IIpfsResponse;
+  data: IIpfsResponse | any;
   ipfsHash: string;
   isPublic: boolean;
 }
@@ -16,10 +16,17 @@ const getIpfs = async (
   uri: string,
   isPublic: boolean
 ): Promise<IReadyProps> => {
-  const res = await axios.get<IIpfsResponse>(
-    `${import.meta.env.VITE_APP_BASE_IPFS_URL as string}${uri}`
-  );
-  return { data: res.data, ipfsHash: uri, isPublic };
+  try {
+    const res = await axios.get<IIpfsResponse>(
+      `${import.meta.env.VITE_APP_BASE_IPFS_URL as string}${uri}`,
+      {
+        timeout: 10000,
+      }
+    );
+    return { data: res.data, ipfsHash: uri, isPublic };
+  } catch (error) {
+    return { data: {}, ipfsHash: uri, isPublic };
+  }
 };
 
 export const Ready: React.FC = () => {
